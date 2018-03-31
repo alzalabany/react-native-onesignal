@@ -49,6 +49,10 @@ OSNotificationOpenedResult* coldStartOSNotificationOpenedResult;
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
++(BOOL)requiresMainQueueSetup {
+  return YES;
+}
+
 - (id)initWithLaunchOptions:(NSDictionary *)launchOptions appId:(NSString *)appId {
     return [self initWithLaunchOptions:launchOptions appId:appId settings:nil];
 }
